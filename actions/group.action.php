@@ -37,7 +37,7 @@
 	}
 
 	if (isset($_POST['query']) && $_POST['query'] == "exit") {
-		$result = $class->exit($_SESSION['group_id'],$_SESSION['student_id']);
+		$result = $class->exiting($_SESSION['group_id'],$_SESSION['student_id']);
 
 		if ($result === true) {
 			echo '<script>window.location = "'.__url__.'/search" </script>';

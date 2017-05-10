@@ -80,7 +80,7 @@ class Group
   		return $result;
   	}
 
-  	public function exit($group,$student){
+  	public function exiting($group,$student){
   		// check if last person on group
   		$result = $this->func->myQuery("SELECT COUNT(*) AS count FROM groups_students WHERE group_id = ? AND active = 1","i",array($group),"fetch");
   		if ($result['count'] == 1) {
