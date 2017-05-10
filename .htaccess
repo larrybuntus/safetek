@@ -1,0 +1,68 @@
+RewriteEngine On
+RewriteBase /new/
+
+RewriteCond %{QUERY_STRING} ^$1
+
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+# rewrite rules for login
+RewriteRule ^login/?$ views/login/index.php [NC,L]
+
+# rewrite rules for search hostels
+RewriteRule ^search/?$ views/search/index.php [NC,L]
+
+# rewrite rules for meetpoints
+RewriteRule ^meetpoints/?$ views/meetpoints/index.php [NC,L]
+
+# rewrite rules for group
+RewriteRule ^group/create/?$ views/group/index.php [NC,L]
+
+# rewrite rules for group join
+RewriteRule ^group/join/?$ views/group/index.php?exist [NC,L]
+
+# rewrite rules for group in main
+RewriteRule ^group/in/members/?$ views/group/in/index.php?members [NC,L]
+
+# rewrite rules for group in members
+RewriteRule ^group/in/chat/?$ views/group/in/index.php?chat [NC,L]
+
+# rewrite rules for group in main
+RewriteRule ^group/in/setoff/?$ views/group/in/index.php?setoff [NC,L]
+
+# rewrite rules for group in main
+RewriteRule ^group/in/?$ views/group/in/index.php [NC,L]
+
+# admin panel screen
+# admin home screen
+RewriteRule ^admin/?$ views/admin/dashboard/index.php [NC,L]
+
+# dashboard screen
+RewriteRule ^admin/dashboard/?$ views/admin/dashboard/index.php [NC,L]
+
+# group screen
+RewriteRule ^admin/groups/?$ views/admin/groups/index.php [NC,L]
+
+# student screen
+RewriteRule ^admin/students/?$ views/admin/students/index.php [NC,L]
+
+# hostels screen
+RewriteRule ^admin/hostels/?$ views/admin/hostels/index.php [NC,L]
+
+# meetpoints screen
+RewriteRule ^admin/meetpoints/?$ views/admin/meetpoints/index.php [NC,L]
+
+# admins screen
+RewriteRule ^admin/admins/?$ views/admin/admins/index.php [NC,L]
+
+# admin settings
+RewriteRule ^admin/settings/?$ views/admin/admins/settings.php [NC,L]
+
+# admin login
+RewriteRule ^admin/auth/login/?$ views/admin/logs/index.php [NC,L]
+
+ 
+
+
